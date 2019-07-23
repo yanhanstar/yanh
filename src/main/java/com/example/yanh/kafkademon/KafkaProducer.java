@@ -28,8 +28,8 @@ public class KafkaProducer extends Thread {
 		int messageNo = 1;
 		while (true) {
 			String messageStr = "message_" + messageNo;
-			System.out.println("Send: " + messageStr);
 			producer.send(new KeyedMessage<>(topic, messageStr));
+			System.out.println("Send: " + messageStr);
 			messageNo++;
 			try {
 				sleep(3000);
